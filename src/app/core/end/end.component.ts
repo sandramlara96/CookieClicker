@@ -3,11 +3,16 @@ import { FormBuilder, FormGroup, Validators, FormControl, FormsModule, ReactiveF
 import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
-  selector: 'app-play',
-  templateUrl: './play.component.html',
-  styleUrls: ['./play.component.css']
+  selector: 'app-end',
+  templateUrl: './end.component.html',
+  styleUrls: ['./end.component.css']
 })
-export class PlayComponent {
+export class EndComponent {
 
+ //Constructor
+ constructor(
+  private router: Router,
+  private activeRoute: ActivatedRoute,  
+){}
 
 }

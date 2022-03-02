@@ -1,12 +1,13 @@
 import { Component, OnDestroy, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators, FormControl, FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
+
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
-export class LoginComponent implements OnInit{
+export class HomeComponent implements OnInit{
 
     //Form
    formNewUser: FormGroup = this.formBuilder.group(
@@ -28,9 +29,6 @@ export class LoginComponent implements OnInit{
 
   }
 
-  async startPlay(playerName?: string) {
-
-    this.router.navigate(["/", "play"]);
-  }
+ 
  
 }

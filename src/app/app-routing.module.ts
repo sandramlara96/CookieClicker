@@ -1,12 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from "./core/login/login.component";
-import { PlayComponent } from "./core/play/play.component";
+import { HomeComponent } from "./core/home/home.component";
+import { GameComponent } from "./core/game/game.component";
+import { EndComponent } from "./core/end/end.component";
 
 const routes: Routes = [
-  {path: "", redirectTo:"/login", pathMatch :"full"},
-  {path: 'play', component: PlayComponent},
-  {path: 'login', component: LoginComponent},
+  {path: "", redirectTo:"/home", pathMatch :"full"},
+  {path: 'game', component: GameComponent},
+  {path: 'home', component: HomeComponent},
+  {path: 'end',  children:[
+    {path: '', component: EndComponent},
+    {path: 'home', component: HomeComponent},
+    {path: 'game', component: GameComponent},
+  ]},
 ];
 
 @NgModule({

@@ -23,7 +23,7 @@
         "
         >
         <p
-        class="label-formFields vea-mb-0"
+        class="label-formFields "
         *ngIf=" this.formNewUser.get('nameNewUser')?.touched &&
         this.formNewUser.get('nameNewUser')?.errors?.required "
         >
@@ -31,13 +31,16 @@
         </p>
       </div>
       </div>
-      <a routerLink="/play">
+      <button routerLink="/game" [disabled]="this.formNewUser.invalid" [ngClass]="{
+        'button-bg-valid': this.formNewUser.valid
+      }" >
         <span></span>
         <span></span>
         <span></span>
         <span></span>
-        Play!
-      </a>
+        <p *ngIf= "this.formNewUser.valid" >Play!</p>
+        <p *ngIf= "this.formNewUser.invalid">Log in!</p>
+      </button>
     </form>
     </div>  
   </div>
