@@ -123,9 +123,9 @@ footer {
 } */
 
 .wrapper{        
-
+  margin-bottom:0px;
   display:flex;
-
+  height:auto;
 }
 .main{
   height:100vh;
@@ -159,7 +159,7 @@ max-width:1px;
 
 footer div {
 display:flex;
-justify-content:end;
+justify-content:flex-end;
 }
 /* Some more styles to beutify this example */
 p{
