@@ -8,12 +8,9 @@
 
 
 .login-box {
-
-margin:25px;
-margin-top:150px;
+margin:150px 25px 0px;
 display:flex;
 flex-direction:column; 
-
 }
 @media (min-width: 576px) and (min-height: 600px) { 
   .login-box {
@@ -43,7 +40,7 @@ flex-direction:column;
 .login-box form{
 
   padding: 3em;
-  height: 320px;
+  height: auto;
   border-radius: 20px;
   text-align: center;
   position: relative;
