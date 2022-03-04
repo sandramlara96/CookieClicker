@@ -1,0 +1,22 @@
+[  
+  {  
+    "id": 1,  
+    "name": "Sandra",  
+    "points": 100  
+  },  
+  {  
+    "id": 2,  
+    "name": "Alba",    
+    "points": 300  
+  },  
+  {  
+    "id": 3,  
+    "name": "Antonio Angel",    
+    "points": 0 
+  },  
+  {  
+    "id": 4,  
+    "name": "Guille",    
+    "points": 200 
+  } 
+]  

@@ -1,0 +1,36 @@
+
+<div class="wrapper" >
+  <header class="fixed-header">
+      <div class="container">          
+        <h2>RANKING</h2>  
+      </div>
+  </header>
+  <article class="main">
+    <div class="tbl-content">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Points</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let player of players">
+            <td>{{player.name}}</td>
+            <td>{{player.points}}</td>
+          </tr> 
+        </tbody>
+      </table>
+    </div>
+  </article>
+      <footer class="fixed-footer">
+      <div class="container"><button #exit routerLink="/end/{{playerName}}/points/{{playerPoints}}">Exit!</button></div>        
+    </footer>
+</div>
+  
+<script>
+  $(window).on("load resize ", function() {
+    var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();
+    $('.tbl-header').css({'padding-right':scrollWidth});
+  }).resize();
+  </script>
