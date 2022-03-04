@@ -6,17 +6,17 @@ import { EndComponent } from "./core/end/end.component";
 
 const routes: Routes = [
   {path: "", redirectTo:"/home", pathMatch :"full"},
-  {path: 'game', component: GameComponent},
+  {path: 'game/:playerName/points/:playerPoints', component: GameComponent},
   {path: 'home', component: HomeComponent},
-  {path: 'end',  children:[
+  {path: 'end/:playerName/points/:playerPoints',  children:[
     {path: '', component: EndComponent},
     {path: 'home', component: HomeComponent},
-    {path: 'game', component: GameComponent},
+    {path: 'game/:playerName/points/:playerPoints', component: GameComponent},
   ]},
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, { relativeLinkResolution: "legacy" })],
   exports: [RouterModule]
-})
+}) 
 export class AppRoutingModule { }

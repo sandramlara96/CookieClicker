@@ -9,14 +9,25 @@ import { ActivatedRoute, Router } from "@angular/router";
 })
 
 
-export class GameComponent {
+export class GameComponent implements OnInit, OnDestroy {
+  playerName: string; 
+  playerPoints: number=0;
 
-  count: number=0;
-  player: string ="Sandra";
+
+  constructor(
+    private activeRoute: ActivatedRoute){}
+
 
   click(){
-    this.count =this.count +1;
+    this.playerPoints =this.playerPoints +1;
   }
 
+ ngOnInit():void{
+  this.playerName = this.activeRoute.snapshot.paramMap.get("playerName");
+  this.playerPoints = Number(this.activeRoute.snapshot.paramMap.get("playerPoints"));
+}
 
+ngOnDestroy():void{
+ 
+}
 }

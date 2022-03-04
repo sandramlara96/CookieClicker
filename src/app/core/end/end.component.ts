@@ -8,11 +8,17 @@ import { ActivatedRoute, Router } from "@angular/router";
   styleUrls: ['./end.component.css']
 })
 export class EndComponent {
-
+  playerName: string; 
+  playerPoints: number; 
  //Constructor
  constructor(
   private router: Router,
   private activeRoute: ActivatedRoute,  
 ){}
+
+ngOnInit():void{
+  this.playerName = this.activeRoute.snapshot.paramMap.get("playerName");
+  this.playerPoints = Number(this.activeRoute.snapshot.paramMap.get("playerPoints"));
+}
 
 }

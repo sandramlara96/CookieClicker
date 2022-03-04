@@ -23,17 +23,25 @@ main {
 	animation: rotateAngle 6s linear infinite;
   position:fixed;
   top:33%;
-  left:33%;
   height:33%;
-  width:33%;
+  width:100%;
 }
 
+
+
+main div {
+	display:flex;
+	justify-content:center;
+	flex-flow:column;
+	width: auto;
+	margin:0 auto;
+  }
 
 button {
 	display: block;
 	position: relative;
-	margin: 0.5em 0;
-	padding: .8em 2.2em;
+    margin: 0.5em 0;
+	padding: .8em 2.2em; 
 	cursor: pointer;
 
 	background: #FFFFFF;
@@ -182,3 +190,7 @@ button {
   }
 }
 
+main button{
+	font-size:25px;
+	padding: 20px 100px 20px 100px ;
+}

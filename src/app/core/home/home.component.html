@@ -1,7 +1,7 @@
 
 <div class="login-box">
   <div>  
-  <h2>COOKIE CLICKER</h2>
+  <h2>SPACE CLICKER</h2>
   <form [formGroup]="formNewUser" id="newUser">      
   <div class="user-box">
           
@@ -31,7 +31,7 @@
         </p>
       </div>
       </div>
-      <button routerLink="/game" [disabled]="this.formNewUser.invalid" [ngClass]="{
+      <button routerLink="/game/{{playerName}}/points/{{playerPoints}}" [disabled]="this.formNewUser.invalid" [ngClass]="{
         'button-bg-valid': this.formNewUser.valid
       }" >
         <span></span>

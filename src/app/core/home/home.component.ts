@@ -8,14 +8,17 @@ import { ActivatedRoute, Router } from "@angular/router";
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit{
+  playerName:string;
+  playerPoints: number;
 
     //Form
    formNewUser: FormGroup = this.formBuilder.group(
     {
       nameNewUser: ["", [Validators.required]]
     },{}
-  );;
+  );
 
+  
  
     //Constructor
   constructor(private formBuilder: FormBuilder,
@@ -25,10 +28,22 @@ export class HomeComponent implements OnInit{
 
 
 
-  ngOnInit() {
 
-  }
+    ngOnInit() {
+      this.playerName=null;
+      this.playerPoints=0;
+      this.valueChangesForm();
+    }
 
- 
+   /**
+   * Subscribe to changes in form
+   */
+    valueChangesForm() {
+      const observableNameNewUser = this.formNewUser.get("nameNewUser").valueChanges.subscribe((val) => {
+        this.playerName=val;
+      });
+  
+
+    }
  
 }
