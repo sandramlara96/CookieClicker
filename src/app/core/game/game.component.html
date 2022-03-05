@@ -6,20 +6,21 @@
 <footer><button #exit routerLink="/end">Exit!</button></footer>
 </div> -->
 
-<div class="wrapper" >
+<div class="wrapper">
     <header class="fixed-header">
-        <div id ="container-header" class="container">          
-                <p id="player">{{playerName}}</p>
-                <div id="container-points">
-                   <p >Points: </p>
-                    <p id="count">{{playerPoints}}</p>
-                </div>    
+        <div id="container-header" class="container">
+            <p id="player">{{playerName}}</p>
+            <div id="container-points">
+                <p>Points: </p>
+                <p id="count">{{playerPoints}}</p>
+            </div>
         </div>
     </header>
     <article class="main">
-        <button #clickCounter (click)="click()">Click me!</button>    </article>    
+        <button #clickCounter (click)="click()">Click me!</button>
+    </article>
     <footer class="fixed-footer">
-        <div class="container"><button #exit routerLink="/end/{{playerName}}/points/{{playerPoints}}">Exit!</button></div>        
+        <div class="container"><button #exit (click)="savePoints()" routerLink="/end/{{playerName}}">Exit!</button>
+        </div>
     </footer>
 </div>
-    

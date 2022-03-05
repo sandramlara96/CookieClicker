@@ -2,6 +2,12 @@ import { Component, OnDestroy, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators, FormControl, FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 
+
+interface Players{
+  name:string,
+  points:number
+  }
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -9,41 +15,25 @@ import { ActivatedRoute, Router } from "@angular/router";
 })
 export class HomeComponent implements OnInit{
   playerName:string;
-  playerPoints: number;
-
-    //Form
+// Form
    formNewUser: FormGroup = this.formBuilder.group(
-    {
-      nameNewUser: ["", [Validators.required]]
-    },{}
-  );
-
-  
+    {nameNewUser: ["", [Validators.required]]},{}
+    ); 
  
-    //Constructor
+// Constructor
   constructor(private formBuilder: FormBuilder,
     private router: Router,
     private activeRoute: ActivatedRoute,  
   ){}
 
-
-
-
     ngOnInit() {
-      this.playerName=null;
-      this.playerPoints=0;
       this.valueChangesForm();
     }
 
-   /**
-   * Subscribe to changes in form
-   */
+// Subscribe to changes in form  
     valueChangesForm() {
       const observableNameNewUser = this.formNewUser.get("nameNewUser").valueChanges.subscribe((val) => {
         this.playerName=val;
-      });
-  
-
-    }
+      });}
  
 }

@@ -1,47 +1,36 @@
-
 <div class="login-box">
-  <div>  
-  <h2>SPACE CLICKER</h2>
-  <form [formGroup]="formNewUser" id="newUser">      
-  <div class="user-box">
-          
-        <input type="text" required="" maxlength="9" (focus)=" this.formNewUser.get('nameNewUser')?.markAsTouched()" (blur)="this.formNewUser.get('nameNewUser')?.markAsUntouched()" 
-        type="text"
-        formControlName="nameNewUser"
-        class=" col-12"
-        id="nameNewUser"
-        [ngClass]="{
+  <div>
+    <h2>SPACE CLICKER</h2>
+    <form [formGroup]="formNewUser" id="newUser">
+      <div class="user-box">
+
+        <input type="text" required="" maxlength="100" (focus)=" this.formNewUser.get('nameNewUser')?.markAsTouched()"
+          (blur)="this.formNewUser.get('nameNewUser')?.markAsUntouched()" type="text" formControlName="nameNewUser"
+          class=" col-12" id="nameNewUser" [ngClass]="{
           'is-invalid':
           this.formNewUser.get('nameNewUser')?.touched &&
           this.formNewUser.get('nameNewUser')?.errors
         }">
         <label>New Player</label>
-        <div
-        class="input-group-append invalid-feedback"
-        *ngIf="
+        <div class="input-group-append invalid-feedback" *ngIf="
         this.formNewUser.get('nameNewUser')?.touched && this.formNewUser.get('nameNewUser')?.errors
-        "
-        >
-        <p
-        class="label-formFields "
-        *ngIf=" this.formNewUser.get('nameNewUser')?.touched &&
-        this.formNewUser.get('nameNewUser')?.errors?.required "
-        >
-        Required
-        </p>
+        ">
+          <p class="label-formFields " *ngIf=" this.formNewUser.get('nameNewUser')?.touched &&
+        this.formNewUser.get('nameNewUser')?.errors?.required ">
+            Required
+          </p>
+        </div>
       </div>
-      </div>
-      <button routerLink="/game/{{playerName}}/points/{{playerPoints}}" [disabled]="this.formNewUser.invalid" [ngClass]="{
+      <button routerLink="/game/{{playerName}}" [disabled]="this.formNewUser.invalid" [ngClass]="{
         'button-bg-valid': this.formNewUser.valid
-      }" >
+      }">
         <span></span>
         <span></span>
         <span></span>
         <span></span>
-        <p *ngIf= "this.formNewUser.valid" >Play!</p>
-        <p *ngIf= "this.formNewUser.invalid">Log in!</p>
+        <p *ngIf="this.formNewUser.valid">Play!</p>
+        <p *ngIf="this.formNewUser.invalid">Log in!</p>
       </button>
     </form>
-    </div>  
   </div>
-
+</div>

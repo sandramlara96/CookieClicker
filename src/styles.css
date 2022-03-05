@@ -6,6 +6,7 @@ html {
     margin:0;
     padding:0;
     font-family: sans-serif;
-    background-image: url("./assets/Fondo.jpg");
+    /* background-image: url("./assets/Fondo.jpg"); */
+    background-color:rgb(2, 2, 85);
     background-size:cover;
   }
