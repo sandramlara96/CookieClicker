@@ -171,7 +171,7 @@ p{
 
 
 }
-/* 
+
 
 article button{
 height:100px;
@@ -249,7 +249,7 @@ button {
 	button:hover:after {
 		--z: -0.06;
 		animation: translateWobble 2.2s ease forwards;
-	} */
+	}
 
 
 @keyframes rotateAngle {
