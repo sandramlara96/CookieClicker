@@ -17,10 +17,17 @@
         </div>
     </header>
     <article class="main">
-        <button #clickCounter (click)="click()">Click me!</button>
+        <div>
+            <button class ="click" #clickCounter (click)="click()">Click me!</button>
+            <button  class ="buyAutoClick" #autoclick [disabled]="!enableAutoClick" (click)="buyAutoClick()" >
+                <p *ngIf="enableAutoClick">Buy Autoclick</p>
+                <p *ngIf="!enableAutoClick">Win more points</p>
+              </button>
+       
+        </div>
     </article>
     <footer class="fixed-footer">
-        <div class="container"><button #exit (click)="savePoints()" routerLink="/end/{{playerName}}">Exit!</button>
+        <div class="container"><button class ="colorButton" #exit (click)="savePoints()" routerLink="/end/{{playerName}}">Exit!</button>
         </div>
     </footer>
 </div>

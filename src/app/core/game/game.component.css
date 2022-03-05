@@ -173,7 +173,7 @@ p{
 }
 
 
-article button{
+article .colorButton{
 height:100px;
 width:100px;
 text-align:center;
@@ -183,7 +183,7 @@ font-size:15px;
 
 
 
-button {
+.colorButton {
 	display: block;
 	position: relative;
 	margin: 0.5em 0;
@@ -206,7 +206,7 @@ button {
   transform: rotatex(10deg);
 	animation: rotateAngle 6s linear infinite;
 }
-	button:before, button:after {
+	.colorButton:before, .colorButton:after {
 		--z: 0px;
 		position: absolute;
 		top: 0;
@@ -228,25 +228,25 @@ button {
 	
 
 	
-	button:after {
+	.colorButton:after {
 		background-color: #5D00FF;
 	}
 	
-	button:before {
+	.colorButton:before {
 		background-color: #FF1731;
 	}
 	
-	button:hover {
+	.colorButton:hover {
 		background-color: #FFF65B;
 		transition: background .3s 0.1s;
 	}
 	
-	button:hover:before {
+	.colorButton:hover:before {
 		--z: 0.04;
 		animation: translateWobble 2.2s ease forwards;
 	}
 	
-	button:hover:after {
+	.colorButton:hover:after {
 		--z: -0.06;
 		animation: translateWobble 2.2s ease forwards;
 	}
@@ -358,3 +358,52 @@ header div{
 	width: 80%;
 	margin: 0 auto; /* Center the DIV horizontally */
   }
+
+  
+article div {
+	/* height:100px;
+	width:100px;*/
+	display:flex; 
+	flex-direction:column;
+	text-align:center;
+	align-self:center;
+	font-size:15px;
+	
+	}
+	
+	
+	
+	.click {
+
+		margin: 0.5em 0;
+		padding: .8em 2.2em;
+		cursor: pointer;
+	
+		background: #FFFFFF;
+		border: none;
+		border-radius: .4em;
+	
+		text-transform: uppercase;
+		font-size: 1.4em;
+		font-weight: 500;
+		letter-spacing: 0.04em;
+	
+		mix-blend-mode: color-dodge;
+		perspective: 500px;
+		transform-style: preserve-3d;
+
+	}
+
+	.buyAutoClick{
+
+	background-color: #d8b5ff;
+	text-transform: uppercase;
+	font-weight: 500;
+	letter-spacing: 0.04em;
+
+	border-radius: .4em;
+	}
+	.buyAutoClick p{
+
+		color:#141e30 !important;
+		}

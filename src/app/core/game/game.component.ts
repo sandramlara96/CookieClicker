@@ -19,6 +19,8 @@ export class GameComponent implements OnInit, OnDestroy {
   playerName: string;
   playerPoints: number = 0;
   newPlayer: Players = { name: "", points: 0 };
+  enableAutoClick : boolean = false;
+  autoClickPoints =0;
 
   ranking: Players[] = [];
 
@@ -29,8 +31,22 @@ export class GameComponent implements OnInit, OnDestroy {
 
   click() {
     this.playerPoints = this.playerPoints + 1;
+    this.autoClickPoints = this.autoClickPoints +1;
+    if(this.autoClickPoints==10){
+      this.enableAutoClick=true;
+    }
+
   }
 
+ async buyAutoClick(){
+    for( var i=0; i<5; i++) {
+      await new Promise(r=> setTimeout(r,1000));
+        this.click();
+    }
+    this.enableAutoClick=false;
+    this.autoClickPoints=0;
+  
+  }
   savePoints() {
 
     for (var i = 0; i < this.ranking.length; i++) {
