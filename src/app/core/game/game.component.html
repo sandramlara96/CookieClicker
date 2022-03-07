@@ -1,11 +1,3 @@
-<!-- <div class="wrapper">
-<header class="header">{{player}}</header>
-<article class="main">
-    <button #clickCounter (click)="click()">{{playerPoints}}</button>
-</article>
-<footer><button #exit routerLink="/end">Exit!</button></footer>
-</div> -->
-
 <div class="wrapper">
     <header class="fixed-header">
         <div id="container-header" class="container">
@@ -18,16 +10,20 @@
     </header>
     <article class="main">
         <div>
-            <button class ="click" #clickCounter (click)="click()">Click me!</button>
-            <button  class ="buyAutoClick" #autoclick [disabled]="!enableAutoClick" (click)="buyAutoClick()" >
+            <button class="click" #clickCounter (click)="click()">Click me!</button>
+            <button class="autoClickDisable" #autoclick [disabled]="!enableAutoClick" (click)="buyAutoClick()"
+                [ngClass]="{
+                'buyAutoClick': enableAutoClick
+              }">
                 <p *ngIf="enableAutoClick">Buy Autoclick</p>
                 <p *ngIf="!enableAutoClick">Win more points</p>
-              </button>
-       
+            </button>
+
         </div>
     </article>
     <footer class="fixed-footer">
-        <div class="container"><button class ="colorButton" #exit (click)="savePoints()" routerLink="/end/{{playerName}}">Exit!</button>
+        <div class="container"><button class="colorButton" #exit (click)="savePoints()"
+                routerLink="/end/{{playerName}}">Exit!</button>
         </div>
     </footer>
 </div>

@@ -29,15 +29,12 @@ export class RankingComponent implements OnInit {
     this.ranking = JSON.parse(localStorage.getItem("ranking"));
   }
 
-  ngAfterViewInit(){
-    if (!localStorage.getItem('foo')) { 
-      localStorage.setItem('foo', 'no reload') 
-      location.reload(); 
+  ngAfterViewInit() {
+    if (!localStorage.getItem('foo')) {
+      localStorage.setItem('foo', 'no reload')
+      location.reload();
     } else {
-      localStorage.removeItem('foo') 
+      localStorage.removeItem('foo')
     }
   }
-
-  
-  
 }

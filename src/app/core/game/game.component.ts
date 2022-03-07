@@ -1,6 +1,5 @@
-import { Component, ViewChild, ElementRef, OnDestroy, OnInit } from "@angular/core";
-import { FormBuilder, FormGroup, Validators, FormControl, FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { ActivatedRoute, Router } from "@angular/router";
+import { Component,  OnDestroy, OnInit } from "@angular/core";
+import { ActivatedRoute,  } from "@angular/router";
 
 interface Players {
   name: string,
@@ -19,11 +18,11 @@ export class GameComponent implements OnInit, OnDestroy {
   playerName: string;
   playerPoints: number = 0;
   newPlayer: Players = { name: "", points: 0 };
-  enableAutoClick : boolean = false;
-  autoClickPoints =0;
-  numAutoClickers =0;
-  autoClickerBaseCost =5;
-  autoClickerCost = 0; 
+  enableAutoClick: boolean = false;
+  autoClickPoints = 0;
+  numAutoClickers = 0;
+  autoClickerBaseCost = 5;
+  autoClickerCost = 0;
 
   ranking: Players[] = [];
 
@@ -34,21 +33,21 @@ export class GameComponent implements OnInit, OnDestroy {
 
   click() {
     this.playerPoints = this.playerPoints + 1;
-    this.autoClickPoints = this.autoClickPoints +1;
-    if(this.autoClickPoints==this.autoClickerCost){
-      this.enableAutoClick=true;
+    this.autoClickPoints = this.autoClickPoints + 1;
+    if (this.autoClickPoints == this.autoClickerCost) {
+      this.enableAutoClick = true;
     }
 
   }
 
- async buyAutoClick(){
+  async buyAutoClick() {
 
-    this.enableAutoClick=false;
-    this.autoClickPoints=0;
-    this.numAutoClickers=this.numAutoClickers+1;
-    this.autoClickerCost = this.autoClickerBaseCost +this.autoClickerBaseCost*this.numAutoClickers;
-    for( var i=0; i<5; i++) {
-      await new Promise(r=> setTimeout(r,100));
+    this.enableAutoClick = false;
+    this.autoClickPoints = 0;
+    this.numAutoClickers = this.numAutoClickers + 1;
+    this.autoClickerCost = this.autoClickerBaseCost + this.autoClickerBaseCost * this.numAutoClickers;
+    for (var i = 0; i < 5; i++) {
+      await new Promise(r => setTimeout(r, 100));
       this.playerPoints = this.playerPoints + 1;
     }
   }
@@ -66,7 +65,7 @@ export class GameComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.loadRanking();
-    this.autoClickerCost=this.autoClickerBaseCost;
+    this.autoClickerCost = this.autoClickerBaseCost;
   }
 
   loadRanking() {

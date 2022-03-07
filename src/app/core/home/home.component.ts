@@ -3,37 +3,38 @@ import { FormBuilder, FormGroup, Validators, FormControl, FormsModule, ReactiveF
 import { ActivatedRoute, Router } from "@angular/router";
 
 
-interface Players{
-  name:string,
-  points:number
-  }
+interface Players {
+  name: string,
+  points: number
+}
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit{
-  playerName:string;
-// Form
-   formNewUser: FormGroup = this.formBuilder.group(
-    {nameNewUser: ["", [Validators.required]]},{}
-    ); 
- 
-// Constructor
+export class HomeComponent implements OnInit {
+  playerName: string;
+  // Form
+  formNewUser: FormGroup = this.formBuilder.group(
+    { nameNewUser: ["", [Validators.required]] }, {}
+  );
+
+  // Constructor
   constructor(private formBuilder: FormBuilder,
     private router: Router,
-    private activeRoute: ActivatedRoute,  
-  ){}
+    private activeRoute: ActivatedRoute,
+  ) { }
 
-    ngOnInit() {
-      this.valueChangesForm();
-    }
+  ngOnInit() {
+    this.valueChangesForm();
+  }
 
-// Subscribe to changes in form  
-    valueChangesForm() {
-      const observableNameNewUser = this.formNewUser.get("nameNewUser").valueChanges.subscribe((val) => {
-        this.playerName=val;
-      });}
- 
+  // Subscribe to changes in form  
+  valueChangesForm() {
+    const observableNameNewUser = this.formNewUser.get("nameNewUser").valueChanges.subscribe((val) => {
+      this.playerName = val;
+    });
+  }
+
 }
