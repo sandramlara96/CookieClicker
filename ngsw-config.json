@@ -10,8 +10,6 @@
           "/favicon.ico",
           "/index.html",
           "/manifest.webmanifest",
-          "/bootstrap-table.min.js",
-          "/jquery.min.js",
           "/*.css",
           "/*.js"
         ]
