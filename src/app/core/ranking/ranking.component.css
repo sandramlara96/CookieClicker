@@ -23,10 +23,11 @@ h1{
   text-align: center;
   margin-bottom: 15px;
 }
-table{
+
+ table{
   width:100%;
   table-layout: fixed;
-}
+} 
 .tbl-content{
   background-color: rgba(255,255,255,0.3);
  }
@@ -74,7 +75,6 @@ section{
 }
 
 
-
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
 
 *{
@@ -92,8 +92,6 @@ section{
 .main{
   display: flex;
   flex-direction: column;
-  /* transform: rotatex(10deg); */
-  /* animation: rotateAngle 6s linear infinite; */
   position:fixed;
   top:25%;
   width:100%;
@@ -101,7 +99,7 @@ section{
 }
 .container{
   width: 80%;
-  margin: 0 auto; /* Center the DIV horizontally */
+  margin: 0 auto; 
 }
 .fixed-header, .fixed-footer{
   width: 100%;
@@ -131,7 +129,6 @@ footer div {
 display:flex;
 justify-content:end;
 }
-/* Some more styles to beutify this example */
 p{
   color: #fff;
   padding: 7px 25px;
@@ -304,4 +301,4 @@ article .tbl-content{
   font-size:15px;
   margin-right:10%;
   margin-left:10%;
-  }
+  } 

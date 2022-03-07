@@ -21,6 +21,9 @@ export class GameComponent implements OnInit, OnDestroy {
   newPlayer: Players = { name: "", points: 0 };
   enableAutoClick : boolean = false;
   autoClickPoints =0;
+  numAutoClickers =0;
+  autoClickerBaseCost =5;
+  autoClickerCost = 0; 
 
   ranking: Players[] = [];
 
@@ -32,20 +35,22 @@ export class GameComponent implements OnInit, OnDestroy {
   click() {
     this.playerPoints = this.playerPoints + 1;
     this.autoClickPoints = this.autoClickPoints +1;
-    if(this.autoClickPoints==10){
+    if(this.autoClickPoints==this.autoClickerCost){
       this.enableAutoClick=true;
     }
 
   }
 
  async buyAutoClick(){
-    for( var i=0; i<5; i++) {
-      await new Promise(r=> setTimeout(r,1000));
-        this.click();
-    }
+
     this.enableAutoClick=false;
     this.autoClickPoints=0;
-  
+    this.numAutoClickers=this.numAutoClickers+1;
+    this.autoClickerCost = this.autoClickerBaseCost +this.autoClickerBaseCost*this.numAutoClickers;
+    for( var i=0; i<5; i++) {
+      await new Promise(r=> setTimeout(r,100));
+      this.playerPoints = this.playerPoints + 1;
+    }
   }
   savePoints() {
 
@@ -61,6 +66,7 @@ export class GameComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.loadRanking();
+    this.autoClickerCost=this.autoClickerBaseCost;
   }
 
   loadRanking() {
