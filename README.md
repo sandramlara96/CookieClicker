@@ -1,27 +1,21 @@
-# MyApp
+# Space Clicker
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.2.
+Aplicación móvil web progresiva basada en un juego de puntos incremental.
 
-## Development server
+## Pantalla home
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+La pantalla home es la primera vista de nuestra aplicación y es la ruta por defecto de la misma. En ella se pedirá al usuario que introduzca su nombre para comenzar el juego, el botón para comenzar el juego cambiará su texto de Log in por Join in cuando se detecte que se ha incluido un nombre válido en el campo destinado a ello y permitirá la navegación a la pantalla game
 
-## Code scaffolding
+## Pantalla game
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+La pantalla game es la pantalla principal de nuestra aplicación. Esta se compone por una cabecera la cual compone el nombre del jugador y los puntos del mismo, una parte principal la cual contiene los botones para ganar clicks y poder comprar autoclicks y un pie de pagina con un botón de salida en el cual el usuario puede detener el juego en cualquier momento y navegar a la pantalla end
 
-## Build
+## Pantalla end
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+La pantalla end es la pantalla final del juego , a la cual se ha accedido tras que el usuario haya pulsado el boton exit desde la pantalla principal. En esta pantalla se permite acceder a la pantalla de ranking donde los usuarios podran visualizar las puntuaciones de los jugadores que han accedido a la aplicacion , jugar de nuevo con el mismo usuario o empezar una nueva partida con un usuario diferente
 
-## Running unit tests
+## Pantalla ranking
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+La pantalla ranking permite la visualización de los usuarios y puntuaciones que han obtenido al acceder a la aplicación , pudiendo estas ser ordenadas de manera ascente o descendente
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
